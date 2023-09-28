@@ -1,0 +1,936 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200;12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap');
+
+/* CSS RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  box-sizing: border-box;
+  font-family: 'Bricolage Grotesque';
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  background-color: #E9E0D8;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* MOBILE PHONE */
+@media only screen and (max-width: 600px) {
+   /* Nav */
+   .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    color: #1C1D1D; 
+    height: 15vh;
+    width: 100vw;
+    background-color: transparent;
+    backdrop-filter: blur(6px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 5px;
+  }
+  
+  nav h1 {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #1C1D1D;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  nav a:hover {
+     border-bottom: solid 1px black;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-button {
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+
+/* HOME PAGE */
+.home-page-container {
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CALCULATOR PAGE */
+.calculator-container {
+  height: 110vh;
+  padding-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/Images/calculator-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+/* DIET PAGE */
+.diet-container {
+  padding-top: 10vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* SIGNUP */
+.signup-container {
+  display: flex;
+  padding-top: 10vh;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 140vh;
+  background-color: #f0f0f0;
+  background: url(/Images/sign-up-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+
+/* LOGIN PAGE */
+.login-container {
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(/Images/log-in-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+
+/* PROFILE PAGE */
+.profile-page-container {
+  height: auto;
+  padding-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: url(/Images/log-in-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.profile-page-left {
+  width: 85%;
+  max-width: 400px;
+  height: auto;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  padding: 40px 50px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.profile-page-left h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: black;
+  padding-bottom: 3.5rem;
+}
+
+.profile-page-left h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  color: black;
+}
+
+.profile-page-left span {
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-left: 0.8rem;
+}
+
+.profile-page-left .btn {
+  width: 100%;
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.profile-page-left .btn:hover {
+  background-color: black;
+  color: white;
+} 
+
+.profile-page-right {
+  width: 85%;
+  max-width: 400px;
+  height: auto;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  padding: 40px 50px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.profile-page-right h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: black;
+  padding-bottom: 3.5rem;
+}
+
+.profile-page-right h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  color: black;
+}
+
+
+.profile-page-right span {
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-left: 0.8rem;
+}
+
+.error-container {
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(/Images/log-in-background.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.error-message {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: black;
+  padding-bottom: 2rem;
+}
+
+.error-btn {
+  width: 10%;
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.update-user-btn {
+  width: 80%;
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.update-user-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.error-btn:hover {
+  background-color: black;
+  color: white;
+} 
+
+
+/* UPDATE PAGE */
+.update-page-container {
+  height: auto;
+  padding-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(/Images/log-in-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+
+
+/* FORM */
+.form {
+  width: auto;
+  color: black;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  padding: 30px 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: black;
+  padding-bottom: 2rem;
+
+}
+
+.form .input-box {
+  width: 95%;
+  height: 2.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  height: 60%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 2);
+  border-radius: 40px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: black;
+  padding: 10px 0 10px 20px;
+} 
+
+.input-box input::placeholder {
+  color: black;
+  font-weight: 500;
+  font-size: 1.2rem;
+
+}
+
+.input-box i {
+  position: absolute;
+  right: 5px;
+  top: 55%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+
+
+.radio-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.radio-button label {
+  font-size: 1.2rem;
+}
+
+.daily-intake {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.form .btn {
+  width: 100%;
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.form .btn:hover {
+  background-color: black;
+  color: white;
+} 
+
+.buttons {
+  margin: 0 0 1.5rem 0;
+}
+
+
+
+
+
+
+
+
+}
+
+
+/* DESKTOP */
+@media only screen and (min-width: 992px) {
+
+  /* Nav */
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem 4rem;
+    color: #1C1D1D; 
+    height: 10vh;
+    width: 100vw;
+    background-color: transparent;
+    backdrop-filter: blur(6px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav h1 {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #1C1D1D;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  nav a:hover {
+     border-bottom: solid 1px black;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-button {
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .nav-button:hover {
+    background-color: black;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+/* HOME PAGE */
+.home-page-container {
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CALCULATOR PAGE */
+.calculator-container {
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/Images/calculator-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+/* DIET PAGE */
+.diet-container {
+  padding-top: 10vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* SIGNUP */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 120vh;
+  background-color: #f0f0f0;
+  background: url(/Images/sign-up-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+
+/* LOGIN PAGE */
+.login-container {
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(/Images/log-in-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+
+/* PROFILE PAGE */
+.profile-page-container {
+  height: 100vh;
+  padding-top: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: url(/Images/log-in-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.profile-page-left {
+  width: 40%;
+  max-width: 400px;
+  height: auto;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  padding: 40px 50px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.profile-page-left h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: black;
+  padding-bottom: 3.5rem;
+}
+
+.profile-page-left h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  color: black;
+}
+
+.profile-page-left span {
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-left: 0.8rem;
+}
+
+.profile-page-left .btn {
+  width: 100%;
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.profile-page-left .btn:hover {
+  background-color: black;
+  color: white;
+} 
+
+.profile-page-right {
+  width: 40%;
+  max-width: 400px;
+  height: auto;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  padding: 40px 50px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.profile-page-right h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: black;
+  padding-bottom: 3.5rem;
+}
+
+.profile-page-right h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  color: black;
+}
+
+
+.profile-page-right span {
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-left: 0.8rem;
+}
+
+.error-container {
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(/Images/log-in-background.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.error-message {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: black;
+  padding-bottom: 2rem;
+}
+
+.error-btn {
+  width: 10%;
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.update-user-btn {
+  width: 80%;
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.update-user-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.error-btn:hover {
+  background-color: black;
+  color: white;
+} 
+
+
+/* UPDATE PAGE */
+.update-page-container {
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(/Images/log-in-background.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+
+
+/* FORM */
+.form {
+  width: auto;
+  color: black;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  padding: 30px 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: black;
+  padding-bottom: 2rem;
+
+}
+
+.form .input-box {
+  width: 95%;
+  height: 2.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  height: 60%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 2);
+  border-radius: 40px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: black;
+  padding: 10px 0 10px 20px;
+} 
+
+.input-box input::placeholder {
+  color: black;
+  font-weight: 500;
+  font-size: 1.2rem;
+
+}
+
+.input-box i {
+  position: absolute;
+  right: 5px;
+  top: 55%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+
+
+.radio-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.radio-button label {
+  font-size: 1.2rem;
+}
+
+.daily-intake {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.form .btn {
+  width: 100%;
+  height: 2.5rem;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.form .btn:hover {
+  background-color: black;
+  color: white;
+} 
+
+.buttons {
+  margin: 0 0 1.5rem 0;
+}
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
