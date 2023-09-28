@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/Auth.context";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config/config.index";
 
 const UpdateProfile = () => {
   const { user, updateUser } = useContext(AuthContext);
@@ -60,7 +61,7 @@ const UpdateProfile = () => {
       dailyIntake: newDailyIntake,
     };
 
-    const response = await fetch(`http://localhost:5005/athlete/${user._id}`, {
+    const response = await fetch(`${API_URL}/athlete/${user._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

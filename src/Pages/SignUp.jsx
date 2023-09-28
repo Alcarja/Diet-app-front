@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../config/config.index";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -31,7 +32,7 @@ const SignUp = () => {
         dailyIntake,
       };
 
-      const response = await fetch("http://localhost:5005/athlete/signup", {
+      const response = await fetch(`${API_URL}/athlete/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
